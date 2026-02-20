@@ -5,7 +5,11 @@ public class PlayerInputManager : MonoBehaviour
 {
     public static PlayerInputManager instance;
     InputSystem_Actions playerControls;
+
     [SerializeField] Vector2 movementInput;
+    public float verticalInput;
+    public float horizontalInput;
+    public float moveAmount;
 
     private void Awake()
     {
@@ -54,5 +58,26 @@ public class PlayerInputManager : MonoBehaviour
     private void OnDestroy()
     {
         SceneManager.activeSceneChanged -= OnSceneChange;
+    }
+
+    private void Update()
+    {
+        HandleMovementInput();
+    }
+    private void HandleMovementInput()
+    {
+        verticalInput = movementInput.y; 
+        horizontalInput = movementInput.x;
+
+        moveAmount = Mathf.Clamp01(Mathf.Abs(verticalInput) + Mathf.Abs(horizontalInput));
+
+        if(moveAmount <= 0.5 && moveAmount > 0)
+        {
+            moveAmount = 0.5f;
+        }
+        else if(moveAmount > 0.5 && moveAmount <= 1)
+        {
+            moveAmount = 1f;
+        }
     }
 }
