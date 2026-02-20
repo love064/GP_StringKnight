@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 4310932424982595656}
   - component: {fileID: 8929298953531569256}
   - component: {fileID: 184151874616835330}
-  - component: {fileID: 7319383388346673170}
+  - component: {fileID: 176618317237918997}
+  - component: {fileID: -4084001910577429285}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -137,7 +138,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7319383388346673170
+--- !u!114 &176618317237918997
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,6 +147,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 8156889700316375397}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df1f1e153e98f744189bed9668fb58f7, type: 3}
+  m_Script: {fileID: 11500000, guid: 53e7dc5f29eccb04097435866f371941, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerManager
+--- !u!114 &-4084001910577429285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8156889700316375397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c770a320c352de34aa8b715d9d672036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerLocomotionManager

@@ -8,7 +8,7 @@ public class WorldSaveManager : MonoBehaviour
 
     [SerializeField] int worldSceneindex = 1;
 
-    private void Awakake()
+    private void Awake()
     {
         if(instance == null)
         {
@@ -30,5 +30,10 @@ public class WorldSaveManager : MonoBehaviour
         AsyncOperation loadOperator = SceneManager.LoadSceneAsync(worldSceneindex);
 
         yield return null;
+    }
+
+    public int GetWorldIndex()
+    {
+        return worldSceneindex;
     }
 }
