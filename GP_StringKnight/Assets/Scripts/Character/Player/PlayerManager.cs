@@ -8,6 +8,14 @@ public class PlayerManager : CharacterManager
         base.Awake();
 
         playerLocomotionManager = GetComponent<PlayerLocomotionManager>();
+
+    }
+
+    protected override void Start()
+    {
+        base.Start();
+
+        PlayerCamera.instance.player = this;
     }
 
     protected override void Update()
@@ -16,4 +24,13 @@ public class PlayerManager : CharacterManager
 
         playerLocomotionManager.HandleAllMovement();
     }
+
+    protected override void LateUpdate()
+    {
+        base.LateUpdate();
+
+        PlayerCamera.instance.HandleAllCameraActions();
+    }
+
+
 }
